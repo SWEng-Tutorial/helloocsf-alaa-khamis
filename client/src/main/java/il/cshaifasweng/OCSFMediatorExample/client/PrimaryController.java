@@ -44,7 +44,8 @@ public class PrimaryController {
 	@FXML
 	void sendMessage(ActionEvent event) {
 		try {
-			Message message = new Message(msgId++, MessageTF.getText());
+			Message message = new Message(msgId++, MessageTF.getText(),
+						submitterID1.getText() + ", "+submitterID2.getText());
 			MessageTF.clear();
 			SimpleClient.getClient().sendToServer(message);
 		} catch (IOException e) {
